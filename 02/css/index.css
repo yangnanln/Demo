@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+h3{
+    background-color: pink;
+    line-height: 60px;
+    color: white;
+    text-align: center;
+
+}
+
+.content{
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+img{
+
+    width: 400px;
+    height: 250px;
+}
+
+h4,p,li{
+
+    padding: 5px;
+}
+h4:hover{
+    opacity:.5;
+}
+p:hover{
+    color: pink;
+}
+
+li:hover{
+    color:deeppink
+}
+dl:hover{
+    color:deeppink;
+}
+dl{
+    margin-top:15px;
+}
+dt{
+margin: 5px
+}
