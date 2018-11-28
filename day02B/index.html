@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        .header{
+            height: 50px;
+            background: #1ABEBF url("images/logo (3).png") no-repeat center center;
+            background-size: 116px 30px;
+        }
+        .nav{
+            background:rgba(128,128,128,0.22);
+        }
+        .container{
+            margin-left: auto;
+            margin-right: auto;
+            width: 1000px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+        }
+        .head{
+            float: left;
+            cursor: pointer;
+            font-size: 12px;                        
+        }
+        .foot{
+            float: right;
+            cursor: pointer;
+            font-size: 12px;
+        }
+        .container a{
+            margin-left: 80px;
+            text-decoration: none;
+        }
+        .img{
+            vertical-align: middle;
+        }
+        .title{
+            margin-left: auto;
+            margin-right: auto;
+            width: 1000px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            padding-left: 25px;
+        }
+        .content{
+            margin-left: auto;
+            margin-right: auto;
+            width: 1000px;
+        }
+        table{
+            width: 800px;
+            text-align: center;
+            line-height: 25px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        .tab{
+            margin-left: auto;
+            margin-right: auto;
+            width: 1000px;
+            background-color: #EBEBEB;
+        }
+        .tit{
+            color: #47c6c3;
+        }
+        .td a{
+            text-decoration: none;
+        }
+        .td:hover{
+            border: 2px solid #feb02c;
+            background-color: #fff;
+            text-decoration: none;
+        }
+        .search{
+            width: 1000px;
+            line-height: 50px;
+            margin-top: 10px;
+            background-color: #dfdfdf;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+        }
+    .s-left{
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        padding-left: 10px;
+    }
+    .s-content{
+        display: inline-block;
+        right: 0;
+    }
+    .s-content>input{
+        text-align: right;
+    }
+    .s-content>button{
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        top: 50%;
+        right: 442px;margin-top: -8px;
+        background: url("images/search.png")no-repeat center center;
+        border: none;   
+    }
+    .s-right{
+        display: inline-block;
+        position: absolute;
+        right: 0;
+        padding-right: 10px;
+    }
+    .s-left>a{
+        text-decoration: none;
+    }
+    .s-right>a{
+        color: #47c6c3;
+        font-size: 14px;
+        text-decoration: none;
+    }
+        .parent,.child,.chd,.page{
+            box-sizing: border-box;
+        }
+        .parent{
+            margin-top: 20px;
+            margin-bottom: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 1000px;
+            font-size: 0;
+        }
+        .parent>div{
+            float: left;
+            display: inline-block;
+            width:240px;
+            height: 370px;
+            border: 1px solid #dfdfdf;
+            background-color: #ebebeb;
+        }
+
+        .parent>.child{
+            margin-right: 13.3333px;
+            padding-left: 10px;
+            padding-top: 10px;
+        }
+       .image{
+            width: 220px;
+        }
+        .chd{
+            padding-left: 10px;
+            padding-top: 10px;
+        }
+        .row:after{
+            content:"";
+            display:table;
+            clear:both;
+        }
+        .child:hover{
+            color: #feb02c;
+            cursor: pointer;
+        }
+        .child>p{
+            font-size: 16px;
+            line-height: 30px;
+        }
+        .chd>p{
+            font-size: 16px;
+            line-height: 30px;
+        }
+        .span{
+            font-weight: bold;
+            font-size: 20px;
+            line-height: 50px;
+            color: #18bebe;
+        }
+        .span:hover{
+            color: #feb02c;
+            cursor: pointer;
+        }
+        .span1{
+            font-size: 16px;
+            line-height: 50px;
+            font-weight: bold;
+            color: #18bebe;
+        }
+        .span1:hover{
+            color: #feb02c;
+            cursor: pointer;
+        }
+        .chd:hover{
+            color: #feb02c;
+            cursor: pointer;
+        }
+        .page{
+            margin-left: auto;
+            margin-right: auto;
+            width: 1000px;
+        }
+        .button{
+            border: none;
+            background: #ebebeb;
+            width: 120px;
+            height: 30px;
+            font-size: 20px;
+            cursor: pointer;
+            font-weight:lighter;
+        }
+        .btn{
+            border: none;
+            background: #fff;
+            width: 30px;
+            height: 30px;
+            font-size: 18px;
+            cursor: pointer;
+            font-weight:lighter;
+        }
+        .btn:hover{
+            text-decoration:underline;
+            color: #feb02c;
+        }
+        .input{
+            border: 1px solid black;
+            width: 30px;
+            height: 30px;
+        }
+        .selected{
+            border: none;
+            width: 80px;
+            height: 30px;
+            background: #ffa700;
+            font-size: 20px;
+            cursor: pointer;
+            color: #fff;
+        }
+        .main{
+            width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .photo{
+            float: left;
+            margin: 20px 10px 20px 10px;
+            border: 1px solid #d3d3d3;
+        }
+        .text{
+            float: left;
+            margin: 10px;
+        }
+        .txt{
+            color: #8cd4d4;
+            font-size: 20px;
+            padding-bottom: 10px;
+            padding-top: 10px;
+        }
+        .footer{
+            height: 240px;
+            background: #515151;
+        }
+        .end{
+            margin-left: auto;
+            margin-right: auto;
+            width: 1000px;
+            height: 200px;
+            border: 1px solid #6f7273;
+            border-left: none;
+            border-right: none;
+            border-top: none;
+        }
+        .color{
+            color: #e3e3e3;
+        }
+        .wei{
+            font-weight: bold;
+            color: #fff;
+        }
+        .wei,.color{
+            line-height: 30px;
+        }
+        .img1{
+            margin-top: 20px;
+            margin-bottom: 20px;       
+             }
+        .box{
+            float: left;
+        }
+        .box1{
+            padding-top: 80px;
+            text-align: center;
+            line-height: 30px;
+        }
+        .atxt{
+            font-size: 14px;
+            color: #fff;
+            text-decoration: none;
+            padding-left: 100px;
+        }
+        .atxt1{
+            font-size: 14px;
+            color: #fff;
+            text-decoration: none;
+            padding: 3px;
+        }
+        .b_img{
+            padding-left: 130px;
+        }
+        .b_img1{
+            padding-left: 143px;
+        }
+        .endl{
+            width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .endl1{
+            padding-top: 30px;
+            float: left;
+            color: #e3e3e3;
+        }
+        .endl2{
+            padding-top: 30px;
+            float: right;
+            color: #e3e3e3;
+        }
+        .box11,.box12{
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+    </div>
+    <div class="nav">
+        <div class="container">
+            <div class="head">
+                <img src="images/location.png" class="img">
+                <span>深圳</span>
+                <span>切换></span>
+            </div>
+            <a href="">首页</a>
+            <a href="">资讯</a>
+            <a href="">测评</a>
+            <a href="">商城</a>
+            <div class="foot">
+                <img src="images/adm.png" class="img">
+                <span>个人中心</span>
+            </div>
+        </div>
+    </div>
+    <div class="title">
+    <p>首页 > 预防装修污染 > 材料库</p>
+    </div>
+    <div class="content">
+        <div class="tab">
+        <table>
+            <tr><td class="tit">类别</td><td class="td"><a href="#">全部</a></td><td class="td"><a href="#">地板</a></td><td class="td"><a href="#">涂料</a></td><td class="td"><a href="#">墙纸</a></td><td class="td"><a href="#">瓷砖</a></td><td class="td"><a href="#">粘胶剂</a></td><td class="td"><a href="#">油漆</a></td><td class="td"><a href="#">家居</a></td><td class="td"><a href="#">板材</a></td><td class="td"><a href="#">饰品</a></td><td><img src="images//indexSelect.png"></td></tr>
+            <tr><td class="tit">类型</td><td class="td"><a href="#">全部</a></td></tr>
+            <tr><td class="tit">材质</td><td class="td"><a href="#">全部</a></td><td class="td"><a href="#">实木</a></td><td class="td"><a href="#">复合</a></td><td class="td"><a href="#">强化</a></td><td class="td"><a href="#">其他</a></td></tr>
+            <tr><td class="tit">品牌</td><td class="td"><a href="#">全部</a></td><td class="td"><a href="#">圣象</a></td><td class="td"><a href="#">大自然</a></td><td class="td"><a href="#">生活家</a></td><td class="td"><a href="#">北美风情</a></td><td class="td"><a href="#">德尔</a></td><td class="td"><a href="#">博点</a></td><td class="td"><a href="#">船王</a></td></tr>
+        </table>
+        </div>
+    </div>
+    <div class="search">
+            <div class="s-left">
+                <a href="#">发布时间 <img src="images/downicon.png" alt=""></a>
+                <a href="#">价格 <img src="images/upicon.png" alt=""></a>
+                <a href="#">环保节能 <img src="images/upicon.png" alt=""></a>
+            </div>
+            <div class="s-content">
+                <button></button>
+                <input type="text" placeholder="搜索">
+            </div>
+            <div class="s-right">
+                <a href="#" class="s-right-a"><img src="images/wenhao.png" alt=""> 了解家具以省建材环保评级标准</a>
+            </div>
+        </div>
+    <div class="parent row">
+            <div class="child">
+                <img src="images/data_image.png" class="image">
+                <p class="font">德尔&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;都市系列3001</p>
+                <p class="font">木地板 - 复合地板</p>
+                <p class="font">单价：128/㎡</p>
+                <span class="span">环保评级：B</span>
+                <span class="span1">&nbsp;&nbsp;&nbsp;(可以使用)</span>
+            </div>
+            <div class="child">
+                <img src="images/data_image.png" class="image">
+                <p class="font">德尔&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;都市系列3001</p>
+                <p class="font">木地板 - 复合地板</p>
+                <p class="font">单价：128/㎡</p>
+                <span class="span">环保评级：B</span>
+                <span class="span1">&nbsp;&nbsp;&nbsp;(可以使用)</span>
+            </div>
+            <div class="child">
+                <img src="images/data_image.png" class="image">
+                <p>德尔&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;都市系列3001</p>
+                <p>木地板 - 复合地板</p>
+                <p>单价：128/㎡</p>
+                <span class="span">环保评级：B</span>
+                <span class="span1">&nbsp;&nbsp;&nbsp;(可以使用)</span>
+            </div>
+            <div class="chd">
+                <img src="images/data_image.png" class="image">
+                <p>德尔&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;都市系列3001</p>
+                <p>木地板 - 复合地板</p>
+                <p>单价：128/㎡</p>
+                <span class="span">环保评级：B</span>
+                <span class="span1">&nbsp;&nbsp;&nbsp;(可以使用)</span>
+            </div>
+        </div>
+        <div class="parent row">
+                <div class="child">
+                    <img src="images/data_image.png" class="image">
+                    <p>德尔&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;都市系列3001</p>
+                    <p>木地板 - 复合地板</p>
+                    <p>单价：128/㎡</p>
+                    <span class="span">环保评级：B</span>
+                    <span class="span1">&nbsp;&nbsp;&nbsp;(可以使用)</span>
+                </div>
+                <div class="child">
+                    <img src="images/data_image.png" class="image">
+                    <p>德尔&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;都市系列3001</p>
+                    <p>木地板 - 复合地板</p>
+                    <p>单价：128/㎡</p>
+                    <span class="span">环保评级：B</span>
+                    <span class="span1">&nbsp;&nbsp;&nbsp;(可以使用)</span>
+                </div>
+                <div class="child">
+                    <img src="images/data_image.png" class="image">
+                    <p>德尔&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;都市系列3001</p>
+                    <p>木地板 - 复合地板</p>
+                    <p>单价：128/㎡</p>
+                    <span class="span">环保评级：B</span>
+                    <span class="span1">&nbsp;&nbsp;&nbsp;(可以使用)</span>
+                </div>
+                <div class="chd">
+                    <img src="images/data_image.png" class="image">
+                    <p>德尔&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;都市系列3001</p>
+                    <p>木地板 - 复合地板</p>
+                    <p>单价：128/㎡</p>
+                    <span class="span">环保评级：B</span>
+                    <span class="span1">&nbsp;&nbsp;&nbsp;(可以使用)</span>
+                </div>
+            </div>
+        <div class="page">
+            <button class="button">上一页</button>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <button class="btn">1</button>
+            <button class="btn">2</button>
+            <button class="btn">3</button>
+            <button class="btn">4</button>
+            <button class="btn">5</button>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <button class="button">下一页</button>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <span>共有10页，去第&nbsp;</span>
+            <input type="text" class="input">&nbsp;
+            <span>页</span>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="selected">确定</button>
+        </div>
+        <div class="main row">
+            <img src="images/small_weixin.png" class="photo">
+            <div class="text">
+                <p class="txt">建材检测 需求反馈</p>
+                <p>亲爱的用户，我们正在不断的完善和更新建材库，</p>
+                <p>若没有找到您想要的材料信息，请将您想测得建材告诉我们</p>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="end row">
+                <div class="box">
+                <img src="images/footerLogo.png" class="img1">
+                <p class="wei">为室内环境健康把好每一关</p>
+                <p class="color">家具医生致力于中国人的家居健康问题，通过专业的技术研究</p>
+                <p class="color">和测评，倾力协助大众打造绿色、环保的人居生活环境。</p>
+                </div>
+                <div class="box1 row">
+                    <div class="box11">
+                    <a href="#" class="atxt">关于我们</a>
+                    <a href="#" class="atxt">版权说明</a><br>
+                    <a href="#" class="atxt">联系我们</a>
+                    <a href="#" class="atxt">用户隐私</a><br>
+                    <a href="#" class="atxt">加入我们</a>
+                    <a href="#" class="atxt">免费申明</a>
+                    </div>
+                    <div class="box12">
+                    <img src="images/weixin2.png" class="b_img">
+                    <a href="#" class="atxt1">官方微信</a><br>
+                    <img src="images/tianmao.png" class="b_img1">
+                    <a href="#" class="atxt1">天猫旗舰店</a><br>
+                    <img src="images/shop.png" class="b_img">
+                    <a href="#" class="atxt1">有赞商城</a>
+                </div>
+            </div>
+            <div class="endl row">
+            <p class="endl1">深圳建筑科学研究院股份有限公司    家居医生网</p>
+            <p class="endl2">鄂ICP备08O11231号 Copyright All Rights Reserved</p>
+            </div>
+        </div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+    border: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+.header{
+
+      height: 53px;   
+     
+      background: #1abebf url("../img/logo.png" ) no-repeat center center;
+  }
+ .navbar{
+    background-color: #efefef;
+    height: 30px;
+ } 
+.title{
+    
+    margin-left: auto;
+    margin-right: auto;
+    width: 600px;
+    
+    text-align: center;
+     /* 浮动 */
+     display: flex;
+     /* 设置子元素水平方向的代码 */
+     justify-content:space-between;
+
+}  
+span{
+    padding: 10px;
+}
+.pro-list{
+    display: grid;
+    padding-top: 20px;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    grid-template-rows: 300px 300px;;
+}
+.content{
+    margin-left: auto;
+    margin-right: auto;
+    width: 600px;
+    
+    text-align: center;
+}
+.pro-list>div{
+    border: 1px solid #333;
+    background-color: #efefef;
+    height: 200px;
+    margin-left: -1px;
+    margin-top: -1px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.pro-list img{
+    width: 150px;
+    height:150px;
+}
+
